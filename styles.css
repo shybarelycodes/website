@@ -1,0 +1,90 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    background: #1e1e2e; /* Black-purple background */
+}
+.hero {
+    background: linear-gradient(to bottom, #1e1e2e, #4b0082);
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+.hero h1 span {
+    color: #a855f7; /* Purple highlight */
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background: rgba(30, 30, 46, 0.8);
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+.navbar a {
+    color: white;
+    text-decoration: none;
+}
+.about, .portfolio, .contact {
+    padding: 50px 20px;
+    text-align: center;
+    background: #2d2d48;
+    margin-top: 80px;
+    border-radius: 15px;
+}
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+.project-card {
+    border: 1px solid #4b0082;
+    padding: 20px;
+    border-radius: 15px;
+    background: #1e1e2e;
+}
+.cta-button {
+    background: #a855f7;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.cta-button:hover {
+    background: #7e22ce;
+}
+.contact form input, .contact form textarea, .contact form button {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #4b0082;
+    background: #2d2d48;
+    color: white;
+    border-radius: 5px;
+}
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #1e1e2e;
+    color: #a855f7;
+}
+
+a {
+    color: white;
+    text-decoration: none; /* Removes underline */
+}
+
+a:hover {
+    text-decoration: underline; /* Adds underline on hover for better UX */
+    color: #a855f7; /* Optional: Add a hover effect with a purple color */
+}
