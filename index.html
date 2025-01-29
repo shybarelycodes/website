@@ -3,60 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shyam Das</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <title>Server Under Maintenance</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: black;
+            color: #D8BFD8;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+        .container {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        h1 {
+            font-size: 3rem;
+            text-shadow: 0 0 10px #D8BFD8;
+        }
+        .background-animation {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+        }
+        .circle {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: rgba(216, 191, 216, 0.5);
+            border-radius: 50%;
+            animation: moveUp 10s infinite linear;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1rem;
+            color: #DDA0DD;
+            font-weight: bold;
+        }
+        @keyframes moveUp {
+            from {
+                transform: translateY(100vh) scale(0.5);
+                opacity: 0.8;
+            }
+            to {
+                transform: translateY(-10vh) scale(1);
+                opacity: 0;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header class="hero">
-        <nav class="navbar">
-            <div class="logo">Shyam Sundar Das</div>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#social">Socials</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="hero-content" data-aos="fade-in">
-            <h1>Hello, I'm <span>Shyam Das</span></h1>
-            <p>Aspiring Electrical Engineer</p>
-            <a href="#portfolio" class="cta-button">View My Socials</a>
-        </div>
-    </header>
-    <section id="about" class="about" data-aos="fade-right">
-        <h2>About Me</h2>
-        <p>Ever since I was young, I was fascinated by the world of engineering, weather it was mechanical, electrical, chemical, etc. The idea that there were multiple steps that need to build up on each other to achieve a simple goal is so astonishing. I am now a Electrical Engineering Major in UNO and do CS on my own time for fun.</p>
-    </section>
-    <section id="social" class="portfolio" data-aos="fade-up">
-        <h2>My Socials</h2>
-        <div class="portfolio-grid">
-            <div class="project-card" data-aos="zoom-in">
-                <h3>Instagram</h3>
-                <p><a href="https://instagram.com/btcshy" target="_blank">https://instagram.com/btcshy</a></p>
-            </div>
-            <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
-                <h3>Telegram</h3>
-                <p><a href="https://t.me/inciqure" target="_blank">https://t.me/inciqure</a></p>
-            </div>
-        </div>
-    </section>
-    <section id="contact" class="contact" data-aos="fade-left">
-        <h2>Contact Me</h2>
-        <h2>shyamsundardas2006@gmail.com</h2>
-        <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message"></textarea>
-            <button type="submit">Send</button>
-        </form>
-    </section>
-    <footer>
-        <p>&copy; 2025 Shyam Das. All rights reserved.</p>
-    </footer>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <div class="background-animation"></div>
+    <div class="container">
+        <h1>Server Under Maintenance</h1>
+    </div>
     <script>
-        AOS.init();
+        const animationContainer = document.querySelector('.background-animation');
+        const circles = [];
+
+        for (let i = 0; i < 30; i++) {
+            let circle = document.createElement('div');
+            circle.classList.add('circle');
+            circle.style.left = `${Math.random() * 100}vw`;
+            circle.style.animationDuration = `${Math.random() * 5 + 5}s`;
+            animationContainer.appendChild(circle);
+            circles.push(circle);
+        }
+
+        document.addEventListener('keydown', (event) => {
+            const letter = event.key;
+            if (/[a-zA-Z0-9]/.test(letter)) {
+                const availableCircles = circles.filter(circle => !circle.textContent);
+                if (availableCircles.length > 0) {
+                    const randomCircle = availableCircles[Math.floor(Math.random() * availableCircles.length)];
+                    randomCircle.textContent = letter;
+                }
+            }
+        });
     </script>
 </body>
 </html>
